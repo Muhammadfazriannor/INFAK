@@ -1,104 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F1F1F1">
+    android:layout_height="match_parent">
 
-    <!-- Header Tosca -->
-    <View
-        android:id="@+id/header"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:background="#00695C" />
-
-    <!-- Logo -->
+    <!-- Background image full screen -->
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="111dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/Logo_Infak" />
-
-    <!-- Welcome Text -->
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome Back"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
-
-    <!-- Container Login -->
-    <LinearLayout
-        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/header"
-        android:orientation="vertical"
-        android:background="@drawable/bg_container_rounded"
-        android:padding="24dp">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg" /> <!-- nama file kecil dan tanpa spasi! -->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#00695C"
-            android:layout_marginBottom="16dp" />
-
-        <EditText
-            android:id="@+id/etLoginEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Masukkan Email"
-            android:background="@drawable/bg_edittext_rounded"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="12dp" />
-
-        <EditText
-            android:id="@+id/etLoginPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Masukkan Password"
-            android:inputType="textPassword"
-            android:background="@drawable/bg_edittext_rounded"
-            android:paddingHorizontal="16dp"
-            android:layout_marginBottom="20dp" />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Login"
-            android:textColor="@android:color/white"
-            android:background="@drawable/bg_button_rounded"
-            android:textStyle="bold" />
+    <!-- Konten Scrollable di atas background -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="16dp">
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
 
-            <TextView
-                android:text="Belum punya akun? "
-                android:textColor="#000000" />
+            <!-- Logo -->
 
+            <!-- Welcome Text -->
             <TextView
-                android:id="@+id/tvRegister"
-                android:text="Daftar"
-                android:textColor="#00695C"
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to\nINFAK"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:clickable="true" />
-        </LinearLayout>
-    </LinearLayout>
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_marginTop="12dp" />
 
-</RelativeLayout>
+            <!-- Card Login -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_container_rounded"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Login"
+                    android:textColor="#00695C"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="Masukkan Email"
+                    android:paddingHorizontal="16dp" />
+
+                <EditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_edittext_rounded"
+                    android:hint="Masukkan Password"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="16dp" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_button_rounded"
+                    android:text="Login"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:text="Belum punya akun? "
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/tvRegister"
+                        android:clickable="true"
+                        android:text="Daftar"
+                        android:textColor="#00695C"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
